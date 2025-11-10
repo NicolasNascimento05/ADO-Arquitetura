@@ -27,11 +27,14 @@ O objetivo principal é **demonstrar na prática a aplicação de três padrões
 ### 🔷 3. Composite
  - Representar estruturas hierárquicas
 
+---
 
-👨‍💻 Autores
-Allan Ribeiro de Souza
-Arthur Vitalino Santos
-Nicolas Oliveira Nascimento
-Paulo Eduardo Messias Grispan
-Wallace Araújo da Silva
-Estudantes de Análise e Desenvolvimento de Sistemas – Centro Universitário SENAC
+## 👨‍💻 Autores
+| **Allan Ribeiro de Souza** |
+| **Arthur Vitalino Santos** |
+| **Nicolas Oliveira Nascimento** |
+| **Paulo Eduardo Messias Grispan** |
+| **Wallace Araújo da Silva** |
+| **Estudantes de Análise e Desenvolvimento de Sistemas – Centro Universitário SENAC** |
+
+---
