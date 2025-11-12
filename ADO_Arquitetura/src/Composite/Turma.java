@@ -26,12 +26,6 @@ public class Turma implements ComponenteEscola {
         return professor;
     }
 
-    public void exibirProfessor() {
-        if (professor != null) {
-            System.out.println("Professor: " + professor.getNome() + ", Matéria: " + professor.getMateria());
-        }
-    }
-
     @Override
     public void exibirInformacoes() {
         System.out.printf("Turma: " + nome + "%n");
