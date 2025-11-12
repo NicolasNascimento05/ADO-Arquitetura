@@ -1,4 +1,3 @@
-// File: `src/Composite/Turma.java`
 package Composite;
 import Strategy.CalculoMedia;
 import Strategy.MediaSimples;
@@ -47,7 +46,7 @@ public class Turma implements ComponenteEscola {
     }
 
     // Mantém versão compatível que recebe a estratégia explicitamente
-    public void exibirAprovados(CalculoMedia calculo) {
+    public void aprovados(CalculoMedia calculo) {
         System.out.println("Alunos aprovados da turma: " + nome);
         for (ComponenteEscola componente : turmaForma) {
             if (componente instanceof Aluno) {
@@ -59,7 +58,7 @@ public class Turma implements ComponenteEscola {
                     System.out.printf("Aluno: %s, ID: %s, Média: %.2f%n", aluno.getNome(), aluno.getId(), media);
                 }
             } else if (componente instanceof Turma) {
-                ((Turma) componente).exibirAprovados(calculo);
+                ((Turma) componente).aprovados(calculo);
             }
         }
     }
@@ -69,6 +68,6 @@ public class Turma implements ComponenteEscola {
         CalculoMedia calculo = (professor != null && professor.getEstrategia() != null)
                 ? professor.getEstrategia()
                 : new MediaSimples();
-        exibirAprovados(calculo);
+        aprovados(calculo);
     }
 }
