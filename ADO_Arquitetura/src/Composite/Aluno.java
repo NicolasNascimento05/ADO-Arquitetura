@@ -1,5 +1,3 @@
-// java
-// src/Composite/Aluno.java
 package Composite;
 
 public class Aluno implements ComponenteEscola {

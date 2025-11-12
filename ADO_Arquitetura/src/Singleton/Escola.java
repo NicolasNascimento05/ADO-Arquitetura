@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* Padrão de Projeto Singleton:
-* Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
-* Neste exemplo, a classe Escola é implementada como um Singleton.
-*/
+ * Garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
+ * Neste exemplo, a classe Escola é implementada como um Singleton.
+ */
 
 public class Escola {
     private static Escola instancia;
