@@ -5,8 +5,10 @@ import Strategy.MediaSimples;
 import java.util.ArrayList;
 import java.util.List;
 
+//Classe turma deve armazenar uma coleção de componentes (Alunos e Professores)
 public class Turma implements ComponenteEscola {
     private String nome;
+    // Lista que contém Aluno ou Turma (composite)
     private List<ComponenteEscola> turmaForma = new ArrayList<>();
     private Professor professor;
 
@@ -14,6 +16,7 @@ public class Turma implements ComponenteEscola {
         this.nome = nome;
     }
 
+    // Adiciona componente na composição
     public void adicionar(ComponenteEscola componente){
         turmaForma.add(componente);
     }
@@ -34,6 +37,7 @@ public class Turma implements ComponenteEscola {
         } else {
             System.out.println("Professores: Nenhum professor atribuído");
         }
+        // Itera pelos componentes: graças ao Composite, tratamento uniforme
         for(ComponenteEscola componente : turmaForma){
             componente.exibirInformacoes();
         }
@@ -43,6 +47,7 @@ public class Turma implements ComponenteEscola {
     public void aprovados(CalculoMedia calculo) {
         System.out.println("Alunos aprovados da turma: " + nome);
         for (ComponenteEscola componente : turmaForma) {
+            // Uso de instanceof para distinguir folhas (Aluno) de nós compostos (Turma)
             if (componente instanceof Aluno) {
                 Aluno aluno = (Aluno) componente;
                 double[] notas = aluno.getNotas();
@@ -52,16 +57,17 @@ public class Turma implements ComponenteEscola {
                     System.out.printf("Aluno: %s, ID: %s, Média: %.2f%n", aluno.getNome(), aluno.getId(), media);
                 }
             } else if (componente instanceof Turma) {
+                // Recursão para suportar sub-turmas
                 ((Turma) componente).aprovados(calculo);
             }
         }
     }
 
-    // Nova versão: usa a estratégia definida pelo professor da turma (ou MediaSimples por padrão)
+    // Usa a estratégia definida pelo professor da turma (ou MediaSimples por padrão)
     public void exibirAprovados() {
         CalculoMedia calculo = (professor != null && professor.getEstrategia() != null)
                 ? professor.getEstrategia()
-                : new MediaSimples();
+                : new MediaSimples(); // fallback
         aprovados(calculo);
     }
 }

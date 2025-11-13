@@ -1,4 +1,5 @@
 package Strategy;
+
 /*
  * Padrão de Projeto Strategy:
  * Define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis.

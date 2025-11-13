@@ -1,5 +1,6 @@
 package Strategy;
 
+// Implementação concreta da estratégia de cálculo de média simples
 public class MediaSimples implements CalculoMedia {
     @Override
     public double calular(double[] notas) {

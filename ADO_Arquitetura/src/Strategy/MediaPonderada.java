@@ -4,7 +4,6 @@ package Strategy;
 public class MediaPonderada implements CalculoMedia {
     private double[] pesos;
 
-    // construtor padrão usa pesos crescentes (1,2,3,...)
     public MediaPonderada() {
         this.pesos = null;
     }

@@ -7,8 +7,10 @@ import Strategy.MediaPonderada;
 
 public class Main {
     public static void main(String[] args) {
+        // Obtém a instância única da escola
         Escola escola1 = Escola.getInstancia();
 
+        //Criação e adição de turmas e alunos
         Turma turmaA = new Turma("Turma A");
         Aluno alunoA1 = new Aluno("Caio", "001", new double[]{8.5, 7.0, 9.0});
         Aluno alunoA2 = new Aluno("Fernanda", "002", new double[]{6.0, 6.0, 6.5});
@@ -32,11 +34,14 @@ public class Main {
         turmaA.setProfessor(profA);
         turmaB.setProfessor(profB);
 
+        //Adiciona turmas à escola
         escola1.adicionarTurma(turmaA);
         escola1.adicionarTurma(turmaB);
 
+        //Criando uma segunda escola para demonstrar o singleton
         Escola escola2 = Escola.getInstancia();
 
+        //Repetindo o processo para a segunda escola
         Turma turmaC = new Turma("Turma C");
         Aluno alunoC1 = new Aluno("Mariana", "005", new double[]{7.0, 7.5, 8.0});
         Aluno alunoC2 = new Aluno("Lucas", "006", new double[]{5.0, 6.0, 6.5});
@@ -53,6 +58,7 @@ public class Main {
         turmaD.adicionar(turmaD2);
         turmaD.adicionar(turmaD3);
 
+        //Calculo de média definido pelos professores (Strategy)
         // Carla usa média ponderada com pesos específicos
         Professor profC = new Professor("Prof. Carla", "Física", new MediaPonderada(new double[]{2.0, 1.0, 1.5}));
         Professor profD = new Professor("Prof. Diego", "Química", new MediaSimples());
@@ -62,6 +68,7 @@ public class Main {
         escola2.adicionarTurma(turmaC);
         escola2.adicionarTurma(turmaD);
 
+        // Exibe informações das turmas de ambas as escolas
         System.out.println("Turmas escola 1:");
         turmaA.exibirInformacoes();
         System.out.println("-----------------------\n");
@@ -75,6 +82,7 @@ public class Main {
         System.out.println("-----------------------\n");
 
         // Agora usa a estratégia definida pelo professor de cada turma
+        // para exibir os alunos aprovados em cada turma
         System.out.println("\nAlunos aprovados - Turma A:");
         turmaA.exibirAprovados();
 

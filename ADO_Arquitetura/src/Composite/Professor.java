@@ -3,6 +3,7 @@ package Composite;
 import Strategy.CalculoMedia;
 import Strategy.MediaSimples;
 
+//Classe Professor que utiliza o padrão Strategy para cálculo de média
 public class Professor {
     private String nome;
     private String materia;
@@ -15,7 +16,7 @@ public class Professor {
     public Professor(String nome, String materia, CalculoMedia estrategia) {
         this.nome = nome;
         this.materia = materia;
-        this.estrategia = estrategia;
+        this.estrategia = (estrategia != null) ? estrategia : new MediaSimples();
     }
 
     public String getNome() {
